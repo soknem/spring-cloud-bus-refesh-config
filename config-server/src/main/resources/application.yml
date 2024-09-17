@@ -1,6 +1,8 @@
 spring:
   application:
     name: config-server
+  profiles:
+    active: vault
   cloud:
     config:
       enabled: true
@@ -8,7 +10,7 @@ spring:
         git:
           uri: https://github.com/soknem/config-server
           clone-on-start: true
-          search-paths: '{application}'
+#          search-paths: '{application}'
 #          username: soknem
 #          password:
     #          search-paths:

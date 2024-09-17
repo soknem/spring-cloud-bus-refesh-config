@@ -24,6 +24,8 @@ spring:
         enabled: true
       env:
         enabled: true
+  profiles:
+    active: prod
 
 management:
   endpoints:

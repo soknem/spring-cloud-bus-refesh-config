@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: demo
+  profiles:
+    active: vault
+#      - native
+#      - vault
+#      - default
+
+  cloud:
+#    vault:
+#      kv:
+#        backend: secret
+#      uri: http://68.183.187.158:8200
+#      authentication: token
+#      token: myroot
+    config:
+      server:
+        #        native:
+        #          searchLocations:
+        #          - file:///D:\CSTAD_ADV\STUDY\ME\config-server
+        #          - file:///D:\CSTAD_ADV\STUDY\ME\config-server\sub-folder
+#        vault:
+#          backend: ${HASHICORP_BACKEND}
+#          kv-version: ${HASHICORP_KV_VERSION}
+#          host: ${HASHICORP_HOST}
+#          port: ${HASHICORP_PORT}
+#          authentication: token
+#          token: ${HASHICORP_TOKEN}
+#          scheme: ${HASHICORP_SCHEME}
+
+        vault:
+          backend: secret
+          kv-version: 2
+          host: 68.183.187.158
+          port: 8200
+          authentication: token
+          token: myroot
+          scheme: http
+server:
+  port: 8888

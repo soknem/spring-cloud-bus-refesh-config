@@ -2,6 +2,7 @@ package com.microservice.user_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/users")
+@RefreshScope
 public class UserController {
 
     @GetMapping
@@ -24,7 +26,7 @@ public class UserController {
         return config.getText();
     }
 
-//    @Value("${echo.message.text}")
+    @Value("${echo.message.text}")
     private String echoMessageText;
 
     @GetMapping("/echo")

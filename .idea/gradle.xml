@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/eureka" />
             <option value="$PROJECT_DIR$/product-service" />
             <option value="$PROJECT_DIR$/user-service" />
+            <option value="$PROJECT_DIR$/vault" />
           </set>
         </option>
       </GradleProjectSettings>
