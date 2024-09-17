@@ -2,7 +2,9 @@ spring:
   application:
     name: config-server
   profiles:
-    active: vault
+    active:
+      - vault
+      - git
   cloud:
     config:
       enabled: true
@@ -16,6 +18,14 @@ spring:
     #          search-paths:
 #            - config-repo
 #          default-label: main
+        vault:
+          backend: secret
+          kv-version: 2
+          host: 68.183.187.158
+          port: 8200
+          authentication: token
+          token: myroot
+          scheme: http
     bus:
       enabled: true
       refresh:

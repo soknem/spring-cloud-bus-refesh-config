@@ -4,10 +4,11 @@ spring:
   application:
     name: product-service
   config:
-    import: configserver:http://68.183.225.48:8888
+    import: "optional:configserver:"
   cloud:
-#    config:
+    config:
 #      uri: http://68.183.225.48:8888
+      uri: http://localhost:8888
     stream:
       kafka:
         binder:

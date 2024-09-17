@@ -11,7 +11,8 @@ spring:
     import: "optional:configserver:"
   cloud:
     config:
-      uri: http://68.183.225.48:8888
+#      uri: http://68.183.225.48:8888
+       uri: http://localhost:8888
     stream:
       kafka:
         binder:
@@ -25,7 +26,7 @@ spring:
       env:
         enabled: true
   profiles:
-    active: prod
+    active: dev
 
 management:
   endpoints:

@@ -8,34 +8,35 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/users")
 @RefreshScope
 public class UserController {
 
-    @GetMapping
-    public String getString(){
-        return "hello";
-    }
-
-    private final UserServiceConfig config;
-
-    @GetMapping("/sayHello")
-    public String getMessage() {
-        return config.getText();
-    }
+    private final UserService userService;
 
     @Value("${echo.message.text}")
     private String echoMessageText;
+
+    @Value("${email}")
+    private String email;
 
     @GetMapping("/echo")
     public ResponseEntity<String> getEchoMessage() {
         return ResponseEntity.ok(echoMessageText);
     }
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello from User Service!";
+    @GetMapping("/email")
+    public String getEmail()
+    {
+        return email;
+    }
+
+    @GetMapping()
+    public List<User> getAllUser(){
+        return userService.getAllUser();
     }
 }
